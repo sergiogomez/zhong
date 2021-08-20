@@ -25,13 +25,13 @@ class TestScheduler < Minitest::Test
 
   def test_scheduler_categories
     Zhong.schedule do
-      category "cat1" do
-        every(10.seconds, "cat_test_one") { nil }
+      category "Category 1" do
+        every(10.seconds, "Test one") { nil }
       end
     end
 
     assert_equal 1, Zhong.jobs.size
-    assert_equal "cat1.cat_test_one", Zhong.jobs.values.first.to_s
+    assert_equal "Category 1. Test one", Zhong.jobs.values.first.to_s
   end
 
   def test_scheduler_nested_category

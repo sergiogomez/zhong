@@ -112,7 +112,7 @@ module Zhong
     end
 
     def to_s
-      @to_s ||= [@category, @name].compact.join(".").freeze
+      @to_s ||= [@category, @name].compact.join(". ").freeze
     end
 
     def next_at
